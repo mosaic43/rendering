@@ -2,7 +2,7 @@
 function renderRectangle(rectangle) {
     return `
         <div class="text-center mt-5">
-            <code>${JSON.stringify(rectangle)}</code>
+          <div style="width:  ${rectangle.width}px;  height: ${rectangle.height}px; background-color: ${rectangle.color}"></div>
         </div>
     `
 }
@@ -16,6 +16,28 @@ function rectangle() {
         color: "#FF00FF"
     }
 
+    console.log('the html', renderRectangle(rectangleAbstraction))
+
     content.innerHTML = renderRectangle(rectangleAbstraction);
 
 }
+
+// Original
+
+// function renderRectangle(rectangle) {
+//     return `
+//         <div class="text-center mt-5">
+//             <code>${JSON.stringify(rectangle)}</code>
+//         </div>
+//     `
+// }
+
+// Original
+
+// function renderRectangle(rectangle) {
+//     return `
+//         <div class="text-center mt-5">
+//             <code>${JSON.stringify(rectangle)}</code>
+//         </div>
+//     `
+// }

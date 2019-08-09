@@ -1,1 +1,25 @@
-/* Type whatever CSS you need here! */
+* {
+    box-sizing: border-box;
+}
+
+.container1 {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    width: 1000px;
+    height: 800px;
+}
+
+.pokergame {
+
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: 30%;
+    width: 30%;
+    background-color: gray;
+    flex-wrap: wrap !important;
+
+} 
+

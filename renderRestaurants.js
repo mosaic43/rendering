@@ -1,12 +1,37 @@
+ // HINT: You can use <img /> tags that point to these playing card images: 
+    // https://commons.wikimedia.org/wiki/Category:SVG_playing_cards
+    
+
+
+
+function buildRestaurantHTML (restaurant){
+    return `
+            
+            <div class="pokergame">
+            <div style="font-size:50px; color:black;">    
+                ${restaurant.name}
+            </div>
+            <div style="font-size:30px; color: black;">
+            ${restaurant.type}
+            </div>
+            <div style="font-size:30px; color: green;">
+            ${restaurant.priceRating}
+            </div>
+            </div>
+           
+   
+      
+    `
+}
+
+
+
+
+
 
 function renderRestaurants(restaurants) {
-    // HINT: You can use <img /> tags that point to these playing card images: 
-    // https://commons.wikimedia.org/wiki/Category:SVG_playing_cards
-    return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(restaurants)}</code>
-        </div>
-    `
+   var restaurantsHTMLArray = restaurants.map(buildRestaurantHTML)
+   return '<div class="text-center mt-5 d-flex flex-wrap justify-content-around" ;>' +  restaurantsHTMLArray.join('') + '</div>'
 }
 
 function restaurants() {

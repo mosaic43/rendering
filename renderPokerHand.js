@@ -1,11 +1,25 @@
+function buildSingleCard (card) {
+    return `<img style="width: 100px" src="${card.value}${card.suit}.png" />`
+}
 
 function renderPokerHand(pokerHand) {
+    var cardsHTMLArray = pokerHand.map(buildSingleCard)
+
+    console.log('before .map:')
+    console.log(pokerHand)
+    console.log('after .map:')
+    console.log(cardsHTMLArray)
+    console.log('join cardsHTML:')
+    console.log(cardsHTMLArray.join(''))
+
+    return '<div class="text-center mt-5">' + cardsHTMLArray.join('') + '</div>'
+
     // HINT: You can use <img /> tags that point to the card images in the /cards folder
-    return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(pokerHand)}</code>
-        </div>
-    `
+    // <div class="text-center mt-5">
+    //    <img src ="${hand.value}${hand.suit}.png"  class="pokergame" />
+    // </div>
+    // ).join('')
+    // return myPokerHand;
 }
 
 function pokerHand() {
@@ -14,23 +28,36 @@ function pokerHand() {
     var pokerHandAbstraction = [
         {
             value: "K",
-            suit: "C"
+            suit: "C",
+            // images: "/cards/KC.png"
+           images: "KC.png"
         },
         {
             value: "K",
-            suit: "D"
+            suit: "D",
+            // images: "/cards/KD.png"
+            images: "KD.png"
+           
         },
         {
             value: "9",
-            suit: "S"
+            suit: "S",
+            // images: "/cards/9S.png"
+            images: "9S.png"
+            
         },
         {
             value: "2",
-            suit: "H"
+            suit: "H",
+            // images: "/cards/2H.png"
+            images: "2H.png"
+           
         },
         {
             value: "9",
-            suit: "H"
+            suit: "H",
+            images: "9H.png",
+       
         }
     ];
 
