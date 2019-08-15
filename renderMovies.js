@@ -1,11 +1,46 @@
 
-function renderMovies(movies) {
-    return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(movies)}</code>
-        </div>
-    `
+
+
+function movieTrailer (trailer){
+
+return `
+<div class="container1">
+<div class="moviePoster">
+${"<img src='" + trailer.poster + "' style='height:100%; width:100%' />"}
+</div>
+<div class="movieTrailers">
+<div style="font-size:40px; font-color:black;">
+${trailer.title}
+</div>
+<div style="font-size:15px; font-color:black">
+${trailer.year}
+</div>
+<div style="font-size:15px; font-color:black">
+IMDB: ${trailer.imdbRating}/10
+</div>
+<div style="font-size:15px; font-color:black">
+Rotten Tomatoes:
+${trailer.rottenTomatoesRating * 100 + "%"}
+</div>
+</div>
+</div>
+
+`
 }
+
+
+
+
+
+function renderMovies(movies) {
+    
+    var movieArray = movies.map(movieTrailer)
+    
+    return   '<div>' + movieArray.join('') + '</div>'
+    
+}
+
+
 
 function movies() {
     var content = document.getElementById('content');

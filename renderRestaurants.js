@@ -5,7 +5,11 @@
 
 
 function buildRestaurantHTML (restaurant){
-    return `
+    var rating = ''
+    for (var i = 0; i < restaurant.priceRating; i++) { 
+        rating += "$";
+      }
+      return `
             
             <div class="pokergame">
             <div style="font-size:50px; color:black;">    
@@ -15,7 +19,7 @@ function buildRestaurantHTML (restaurant){
             ${restaurant.type}
             </div>
             <div style="font-size:30px; color: green;">
-            ${restaurant.priceRating}
+            ${rating}
             </div>
             </div>
            
@@ -26,12 +30,9 @@ function buildRestaurantHTML (restaurant){
 
 
 
-
-
-
 function renderRestaurants(restaurants) {
    var restaurantsHTMLArray = restaurants.map(buildRestaurantHTML)
-   return '<div class="text-center mt-5 d-flex flex-wrap justify-content-around" ;>' +  restaurantsHTMLArray.join('') + '</div>'
+   return '<div class="text-center mt-5 d-flex flex-wrap justify-content-around"><div style="width: 1200px;height:800px;d-flex flex-wrap flex-direction:row;display: inline-flex;">'  +  restaurantsHTMLArray.join('') +  '</div></div>'
 }
 
 function restaurants() {
